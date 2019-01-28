@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Register extends Component {
   constructor() {
@@ -10,16 +11,13 @@ export default class Register extends Component {
       password2: "",
       errors: {}
     };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChange(e) {
+  onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  }
+  };
 
-  onSubmit(e) {
+  onSubmit = e => {
     e.preventDefault();
 
     const newUser = {
@@ -29,8 +27,11 @@ export default class Register extends Component {
       password2: this.state.password2
     };
 
-    console.log(newUser);
-  }
+    axios
+      .post("/api/users/register", newUser)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.response.data));
+  };
 
   render() {
     return (
@@ -62,7 +63,7 @@ export default class Register extends Component {
                     value={this.state.email}
                     onChange={this.onChange}
                   />
-                  <small classNameName="form-text text-muted">
+                  <small className="form-text text-muted">
                     This site uses Gravatar so if you want a profile image, use
                     a Gravatar email
                   </small>
