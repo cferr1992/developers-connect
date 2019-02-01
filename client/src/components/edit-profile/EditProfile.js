@@ -225,7 +225,7 @@ class CreateProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Could be your own website or a company one"
+                  info='Could be your own website or a company one (please add "http://" to the beginning.'
                 />
                 <TextFieldGroup
                   placeholder="Location"
