@@ -56,7 +56,7 @@ class CreateProfile extends Component {
         ? profile.githubusername
         : "";
       profile.bio = !isEmpty(profile.bio) ? profile.bio : "";
-      profile.social = isEmpty(profile.social) ? profile.social : {};
+      profile.social = !isEmpty(profile.social) ? profile.social : {};
       profile.twitter = !isEmpty(profile.social.twitter)
         ? profile.social.twitter
         : "";
