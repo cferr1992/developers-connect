@@ -98,7 +98,7 @@ router.post(
       Post.findById(req.params.id)
         .then(post => {
           if (
-            posts.likes.filter(like => like.user.toString() === req.user.id)
+            post.likes.filter(like => like.user.toString() === req.user.id)
               .length === 0
           ) {
             return res
@@ -132,7 +132,7 @@ router.post(
       Post.findById(req.params.id)
         .then(post => {
           if (
-            posts.likes.filter(like => like.user.toString() === req.user.id)
+            post.likes.filter(like => like.user.toString() === req.user.id)
               .length > 0
           ) {
             return res
@@ -140,7 +140,7 @@ router.post(
               .json({ alreadyliked: "User already liked this post" });
           }
           // Add user id to likes array
-          post.likes.undhift({ user: req.user.id });
+          post.likes.unshift({ user: req.user.id });
 
           post.save().then(post => res.json(post));
         })
