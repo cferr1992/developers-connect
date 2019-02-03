@@ -30,6 +30,6 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
-    "terser": "^3.14.1"
+    "terser": "^3.16.0"
   }
 }
