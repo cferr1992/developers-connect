@@ -4,4 +4,6 @@ A social networking site for developers to interact. Contains registration, logi
 
 Created using React/Redux, Node/Express, and MongoDB as the main technologies, along with many dependencies such as Passport and JWT for authentication, Bootstrap for UI, etc.
 
+Working application can be found at https://rocky-caverns-24327.herokuapp.com/
+
 Created via the Udemy course MERN Stack Front to Back: Full Stack React, Redux & Node.js by Brad Traversy.
